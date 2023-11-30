@@ -24,6 +24,25 @@
 
 
 /*Sherbimet*/
+
+@media screen and (max-width: 815px){
+
+  img{
+    max-width: fit-content;
+    max-height: 250px;
+  }
+
+}
+
+@media screen and (max-width: 1131px){
+
+  img{
+    max-width: fit-content;
+    max-height: 250px;
+  }
+
+}
+
 .sherbimet{
     padding-top: 130px;
     padding: 100px;
@@ -37,14 +56,26 @@
   }
   
   .sherbimet-container .box {
-    padding: 10px;
-    border-radius: 1rem;
-    box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+
+  .sherbimet-container .box h2,
+  .sherbimet-container .box h3,
+  .sherbimet-container .box p {
+    margin: 10px 0;
+  }
+
+  .sherbimet-container .box h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
   
-  /* .sherbimet-container .box:hover{
+  .sherbimet-container .box:hover{
       background-color:#fe5b3d;
-  } */
+  }
   
   .sherbimet-container .box .box-img {
     width: 100%;
@@ -52,9 +83,10 @@
   }
   
   .sherbimet-container .box .box-img img {
-    width: 100%;
-    height: 100%;
+    width: 100%; 
+    height: auto; 
     border-radius: 1rem;
+    object-fit: cover; 
     object-position: center;
   }
   
@@ -190,6 +222,48 @@ footer {
   margin-top: 20px;
 }
 
+
+/* responsive styling */
+
+@media screen and (max-width: 1338px) {
+  .car-popup-content {
+      flex-direction: column; /* Stack image and details vertically */
+      width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .car-popup-content img {
+      width: 50%; 
+      max-height: 350px; 
+      object-fit: contain; 
+      border-right: none; 
+      margin-bottom: 20px; 
+  }
+
+  .car-details {
+      padding: 0; 
+  }
+}
+
+@media screen and (max-width: 692px) {
+  .car-popup-content {
+      flex-direction: column; /* Stack image and details vertically */
+      width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .car-popup-content img {
+      width: 100%; 
+      max-height: 250px; 
+      object-fit: contain; 
+      border-right: none; 
+      margin-bottom: 20px; 
+  }
+
+  .car-details {
+      padding: 0; 
+  }
+}
+
+
 @media screen and (max-width: 600px) {
   .footer-content {
       flex-direction: column;
@@ -215,6 +289,7 @@ footer {
   z-index: 1000;
 }
 
+
 .car-popup-content {
   position: absolute;
   top: 50%;
@@ -224,7 +299,6 @@ footer {
   padding: 20px;
   width: 70%;
   display: flex;
-  
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -233,10 +307,11 @@ footer {
 }
 
 .car-popup-content img {
-  width: 50%;
-  border-right: 1px solid #ddd;
-  padding-right: 20px;
-}
+  max-width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+  object-position: center; 
+  border-right: 1px solid #ddd; }
 
 .car-details {
   padding-left: 20px;
