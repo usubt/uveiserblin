@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--Showroomi-->
+    <section class="sherbimet" id="sherbimet">
+        <div class="heading">
+          <h1>Showroomi jonë</h1>
+          <span>
+            Eksploro ofertat më të mira <br />
+            nga kompania jonë
+          </span>
+        </div>
+        <div class="sherbimet-container">
+          <div class="box">
+            <div class="box-img">
+              <img src="Images/Bmw.png" alt="" />
+            </div>
+            <p>2023</p>
+            <h3>BMW X7 40D  XDrive / M-Sport</h3>
+            <h2>100000€</h2>
+            <a href="buyform.html" class="btn">Blej Tani</a>
+          </div>
+  
+          <div class="box">
+            <div class="box-img">
+              <img src="Images/landi-removebg-preview.png" alt="" />
+            </div>
+            <p>2023</p>
+            <h3>RANGE ROVER SPORT 3.0 DYNAMIC SE</h3>
+            <h2>81000€</h2>
+            <a href="buyform.html" class="btn">Blej Tani</a>
+          </div>
+  
+          <div class="box">
+            <div class="box-img">
+              <img src="Images/Audi-removebg-preview.png" alt="" />
+            </div>
+            <p>2020</p>
+            <h3>AUDI A5 40 TDI S-Line</h3>
+            <h2>55000€</h2>
+            <a href="buyform.html" class="btn">Blej Tani</a>
+          </div>
+  
+          <div class="box">
+            <div class="box-img">
+              <img src="Images/bmwere-removebg-preview.png" alt="" />
+            </div>  
+            <p>2023</p>
+            <h3>BMW XM 4.4 V8 HYBRID / 653 PS</h3>
+            <h2>150000€</h2>
+            <a href="buyform.html" class="btn">Blej Tani</a>
+          </div>
+  
+          <div class="box">
+            <div class="box-img">
+              <img src="Images/urusifire-removebg-preview.png" />
+            </div>
+            <p>2020 </p>
+            <h3>LAMBORGHINI URUS S 4.0 V8 / 666 HP</h3>
+            <h2>150000€</h2>
+            <a href="buyform.html" class="btn">Blej Tani</a>
+          </div>
+  
+          <div class="box">
+            <div class="box-img">
+              <img src="Images/Mercaefort-removebg-preview.png" alt="" />
+            </div>
+            <p>2023</p>
+            <h3>MERCEDES GLE 400D Amg Line / 4Matic</h3>
+            <h2>135000€</h2>
+            <a href="buyform.html" class="btn">Blej Tani</a>
+          </div>
+
+          <!-- Display Pop up code: posht -->
+
+          <div id="carPopup" class="car-popup">
+            <div class="car-popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <img id="carPopupImage" src="" alt="Car Image">
+                <div class="car-details">
+                    <p id="carPopupYear"></p>
+                    <h3 id="carPopupName"></h3>
+                    <h2 id="carPopupPrice"></h2>
+                    <h4 style="margin-bottom: 25px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio eveniet aliquam vel, cumque iste porro similique accusamus? Inventore aspernatur sed atque id aperiam molestias dolorum perferendis explicabo. Voluptatum necessitatibus numquam exercitationem, blanditiis rem ex?</h4>
+                    <a href="buyform.html" class="btn" id="carPopupBuyBtn">Blej Tani</a>
+                </div>
+            </div>
+        </div>
+  
+</body>
+
+<script>
+
+// skripta për popUp feature : open
+
+    function showPopup(imgSrc, year, name, price) {
+    document.getElementById('carPopupImage').src = imgSrc;
+    document.getElementById('carPopupYear').textContent = year;
+    document.getElementById('carPopupName').textContent = name;
+    document.getElementById('carPopupPrice').textContent = price;
+    document.getElementById('carPopup').style.display = 'block';
+}
+
+// skripta per popUp feature: close
+function closePopup() {
+    document.getElementById('carPopup').style.display = 'none';
+}
+
+// Add click event listeners to car boxes
+document.querySelectorAll('.sherbimet-container .box').forEach(box => {
+    box.addEventListener('click', function() {
+        var imgSrc = this.querySelector('.box-img img').src;
+        var year = this.querySelector('p').textContent;
+        var name = this.querySelector('h3').textContent;
+        var price = this.querySelector('h2').textContent;
+        showPopup(imgSrc, year, name, price);
+    });
+});
+</script>
+
+</html>
