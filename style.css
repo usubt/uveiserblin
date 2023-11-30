@@ -72,10 +72,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-  
+/*   
   .sherbimet-container .box:hover{
       background-color:#fe5b3d;
-  }
+  } */
   
   .sherbimet-container .box .box-img {
     width: 100%;
@@ -122,10 +122,10 @@
     border-radius: 0.5rem;
   }
   
-  .sherbimet-container .box .btn:hover {
+  /* .sherbimet-container .box .btn:hover {
     background: #fe5b3d;
     color: #fff;
-  }
+  } */
   
   .box-img:hover{
     background: #fe5b3d;
